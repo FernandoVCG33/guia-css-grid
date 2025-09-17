@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: aliceblue;
+}
+.grid{
+    display: grid;
+    width: 90%;
+    max-width: 1000;
+    margin: 30px auto;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3,1fr) ;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header    header    header"
+                         "contenido contenido sidebar "
+                         "widget1   widget2   sidebar"
+                         "footer    footer    footer";
+}
+.grid div, 
+.grid header,
+.grid aside,
+.grid footer{
+    background-color: #7d7d7d;
+    padding: 20px;
+}
+.grid header{
+    background-color: #383f4d;
+    color: white;
+    grid-column: header;
+}
+.grid aside{
+    background-color: #af5fdd;
+    color: white;
+    grid-area: sidebar;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid .widget{
+    background-color: #1aa9ed;
+    color: white;
+    height: 100px;
+    
+}
+.grid .w1{
+    grid-area: widget1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid .w2{
+    grid-area: widget2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.grid footer{
+    background-color: aqua;
+    color: black;
+    grid-column: footer;
+}
+.grid .contenido{
+    grid-column: contenido;
+}
+
+/*responsive*/
+@media screen and (max-width: 700px){
+    .grid{
+        grid-template-areas:    "header    header    header"
+                                "contenido contenido contenido "
+                                "sidebar   sidebar   sidebar"
+                                "widget1    widget1  widget2"
+                                "footer    footer    footer";
+    }
+
+}

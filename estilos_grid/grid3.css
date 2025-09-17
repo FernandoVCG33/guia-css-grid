@@ -1,0 +1,35 @@
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+    grid-template-rows: repeat(4,auto);
+    grid-template-areas: "header header    header"
+                         "aside1 contenido aside2 "
+                         "aside1 widget    aside2 "
+                         "footer footer    footer ";
+}
+.grid .header{
+    background-color: aquamarine;
+    grid-column: header;
+}
+.grid .aside1{
+    background-color: blueviolet;
+    grid-column: aside1;
+    grid-row: aside1;
+}
+.grid .contenido{
+    background-color: black;
+    grid-area: contenido;
+}
+.grid .widget{
+    background-color: cadetblue;
+    grid-area: widget;
+}
+.grid .aside2{
+    background-color: bisque;
+    grid-area: aside2;
+}
+.grid .footer{
+    background-color: rgb(61, 113, 159);
+    grid-area: footer;
+}
